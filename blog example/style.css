@@ -1,0 +1,29 @@
+.container {
+    background-color: white;
+    min-height: 105vh;
+}
+
+body {
+    background-image: url(./pink\ cloud.gif);
+
+}
+
+nav{
+    margin: -15px;
+    background-color: rgb(234,198,214);
+    display: flex;
+   justify-self: center;
+ 
+}
+.post{
+    margin-top: 20px;
+}
+
+.container{
+    text-align: center;
+}
+
+/* take this margin out */
+#text-center {
+    margin-left: 480px;
+}
