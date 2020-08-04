@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Bable CDN-->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> 
+    <!--put React CDNs under bable cdn-->
+    <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <title>React</title>
+</head>
+<body>
+    <div id="app"></div>
+
+
+    <script type="text/babel">
+    //This is the start of our react Component. This is a class component that creates an object. Spelling and Capitalization are important. Everything inside the curly brackets is part of everything.
+    class App extends React.Component{
+        //State
+        state= {
+             name: 'Kaija',
+             age: 18
+        }
+       
+        handleChange = (e) => {
+            this.setState({name: e.target.value})
+        }
+       handleSubmit = (e) => {
+            //e.preventDefault stops the page from refreaching
+            e.preventDefault();
+            console.log('form submitted', this.state.name)
+       }
+
+
+
+       
+        render() { {/*1. Has to return one element, that can have mutiple elements inside it
+                    2. Class is a reserved word in javascript. SO instead of using class for our HTML classes, we have to use className */}
+                {/*Below is my JSX*/}
+            return(
+                //JSX in here only
+               <div className="app-content">
+                    <h1> Im a genius</h1>
+                    <p> My name is {this.state.name} and i am {this.state.age} years old. </p>
+                    <form action="" onSubmit={this.handleSubmit}>
+                        <input type="text" onChange={this.handleChange}/>
+                        {/* in react all our tags need a slash to be closed*/}
+                        <button>Submit</button>
+                    </form>
+                  
+                </div>
+            )
+        }
+    }
+    //ReactDOm.render takes two arguments
+    //1. The component to get JSX from
+    //2. The element to insert the JSX into
+    ReactDOM.render(<App />, document.getElementById('app'))
+
+    </script>
+    
+</body>
+</html>
